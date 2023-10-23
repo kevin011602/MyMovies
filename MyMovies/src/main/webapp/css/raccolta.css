@@ -1,0 +1,251 @@
+@charset "ISO-8859-1";
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #212121;
+}
+
+/* Stile per l'elemento h1 */
+#raccoltaContainer h1 {
+	text-align: center;
+	font-size: 50px;
+	margin: 5px;
+    color: #333;
+    margin-top: 20px;
+}
+
+#titoloEmodifica {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+#modifyImage {
+	margin-left: 10px;
+	margin-top: 10px;
+  	width: 20px;
+  	height: 20px;
+  	cursor: pointer;
+}
+
+/* Stile del contenitore del codice del film */
+#codiceFilmContainer {
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Effetto ombra */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente i suoi figli */
+    width: 40%;
+    
+    background: linear-gradient(45deg, #ff8080, #80ff80, #8080ff); /* Colori delle sfumature */
+    background-size: 600% 600%; /* Dimensione dell'animazione */
+    animation: gradientAnimation 15s linear infinite; /* Durata dell'animazione e ripetizione infinita */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Inizio dell'animazione */
+    }
+    50% {
+        background-position: 100% 50%; /* Metà dell'animazione */
+    }
+    100% {
+        background-position: 0% 50%; /* Fine dell'animazione, ritorna all'inizio */
+    }
+}
+
+/* Stile del label */
+#codiceFilmContainer label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Stile del campo di input */
+#codiceFilmContainer input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px; /* Aggiunge spazio a destra del campo di input */
+}
+
+/* Stile del pulsante */
+#codiceFilmContainer button {
+    background-color: #007bff; /* Cambia il colore del pulsante a tuo piacimento */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Stile del pulsante al passaggio del mouse */
+#codiceFilmContainer button:hover {
+    background-color: #0056b3; /* Cambia il colore al passaggio del mouse a tuo piacimento */
+}
+
+/**/
+
+#listaFilm {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 10px;
+	margin-top: 20px;
+	padding: 5px;
+	border: solid 1px #ccc;
+	background-color: #fff;
+	min-height: 300px;
+	width: 100%;
+}
+
+#listaFilm p {
+	text-align: center;
+	font-size: 18px;
+	
+	color: #adadad;
+    font-size: 12px;
+    width: 100%; /* Imposta la larghezza al 100% per farlo occupare tutta la larghezza */
+    text-align: center; /* Allinea il testo al centro */
+    margin: 0px;
+    margin-top: 20px; /* Aggiunge margine sotto il paragrafo per spostare gli elementi successivi su una nuova riga */
+}
+
+/* Stile per l'elemento "Film" */
+.Film {
+    margin: 10px 5px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    width: 150px; /* Larghezza fissa */
+    height: 200px; /* Altezza fissa */
+}
+
+/* Stile per l'immagine della copertina */
+.Film #copertina {
+	height: 100%;
+	width: 100%;
+	object-fit: cover; /* Mantieni l'immagine proporzionata e ridimensionata per coprire completamente */
+	border-radius: 10px;
+	display: block;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	border-radius: 10px;
+	background-color: #008CBA;
+}
+
+.Film:hover .overlay {
+  opacity: 1;
+}
+
+/* Stile per il titolo del film */
+.Film h3 {
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+  /* Stile per il link al film */
+.Film .link {
+	color: white;
+	text-decoration: none;
+	transition: color 0.3s, background-color 0.3s;
+}
+
+  /* Stile per l'icona del cestino */
+#delete {
+	position: absolute;
+	top: 70%;
+	left: 45%;
+	width: 15px;
+	height: 17px;
+}
+
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo sfocato */
+    z-index: 1;
+}
+
+#modificaNome {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    text-align: center;
+}
+
+#modificaNome label {
+	text-align: left;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#modificaNome input[type="text"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#modificaNome input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#modificaNome input[type="submit"]:hover {
+	background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    #modificaNome {
+        width: 80%;
+    }
+}

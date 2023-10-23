@@ -1,0 +1,157 @@
+@charset "ISO-8859-1";
+
+/* Reset dei margini e del padding per eliminare spazi extra */
+body, h1, h2, h3, p, a {
+	font-family: Arial, sans-serif;
+  	margin: 0;
+  	padding: 0;
+  	color: #212121;
+}
+
+body {
+	opacity: 0;
+  	transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* Stile per il contenuto principale (main) */
+main {
+  padding: 20px;
+}
+
+/* Stile per la sezione dei badge */
+.pannello {
+	margin: 20px 0;
+  	background-color: #f0f0f0;
+  	padding: 20px;
+  	border-radius: 10px;
+  	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Aggiunta dell'ombra */
+}
+
+h2 {
+  font-size: 20px;
+}
+
+#AggiungiRaccolta {
+	display: flex;
+    align-items: center;
+}
+
+#AggiungiRaccolta #mostraForm {
+	width: 80px; /* Larghezza del pulsante */
+	height: 80px; /* Altezza del pulsante */
+	background-color: #fff; /* Colore di sfondo del pulsante */
+	border: solid 2px #007bff; /* Rimuovi il bordo */
+	border-radius: 50%; /* Bordi arrotondati per creare un cerchio */
+	font-size: 24px; /* Dimensione del testo */
+	color: #007bff; /* Colore del testo */
+	cursor: pointer;
+	text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+}
+
+#AggiungiRaccolta #mostraForm:hover {
+    background-color: #0056b3;
+    color: #fff; /* Cambia il colore del testo all'hover */
+}
+
+#nomeRaccoltaForm {
+    display: none;
+    margin: 20px;
+    opacity: 0;
+}
+
+#nomeRaccoltaForm.fade-in {
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+#nomeRaccoltaForm button {
+	background-color: #007bff;
+	border-radius: 50%;
+	font-size: 14px;
+	color: #007bff;
+	cursor: pointer;
+	text-align: center;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	margin-left: 5px;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#nomeRaccoltaForm button:hover {
+	background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#nomeRaccoltaForm input[type="text"] {
+	width: 200px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+#Raccolte {
+	display: flex;
+	text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#Raccolte p {
+	margin: 15px;
+    padding: 5px 10px;
+}
+
+#name a {
+	display: flex;
+    margin: 15px;
+    margin-top: 0;
+    padding: 5px 10px;
+    color: #212121;
+    opacity: 0.9;
+    background: linear-gradient(90deg, transparent 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    text-decoration: none;
+    transition: background-position 1s, color 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Aggiunta dell'ombra */
+}
+
+#name a:hover {
+    background-position: left bottom;
+    background-color: #0056b3;
+    color: white;
+}
+
+#delete {
+	width: 15px;
+	height: 17px;
+}
+
+#delete:hover {
+	cursor: pointer;
+}
