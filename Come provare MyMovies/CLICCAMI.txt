@@ -1,0 +1,14 @@
+Aggiungere il progetto a Eclipse
+Tasto destro sul progetto: Properties -> Java Build Path -> Libraries: importare json.jar e mysql-connector-java.jar
+Sempre su Libraries, se non è presente, aggiungere come 'Server Runtime' Apache Tomcat v9.0, eventualmente importare Tomcat se questo non è presente.
+Eseguire 'StartMySQL.bat' con privilegi di amministratore per avviare i servizi MySQL
+Esportare il file .war dopo aver testato il programma con Eclipse
+Sostituire tomcat-users.xml in apache-tomcat-9.0.73\conf, per salvare le credenziali che ci serviranno per fare il deploy dell'app
+Eseguire 'startup.bat' (dalla cartella apache-tomcat-9.0.73\bin) [NON CHIUDERE LA SHELL CHE RIMARRA' APERTA!]
+Collegarsi a '127.0.0.1:8080'
+Premere su 'Manager App' e accedere con username: 'tomcat' e password: 'tomcat' (scritte nel file tomcat-users.xml)
+Nella sezione 'Deploy', alla voce 'WAR file to deploy' importare il file .war
+Nella sezione 'Applications', cercare /MyMovies che dovrebbe essere in stato Running (true), in caso contrario premere su 'Start' alla casella corrispondente, sotto la colonna 'Commands'
+Premere su /MyMovies e testare il sito
+Quando avremo finito, eseguire 'shutdown.bat'
+Eseguire 'StopMySQL.bat' con privilegi di amministratore.
