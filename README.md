@@ -1,8 +1,4 @@
 # MyMovies
-<p align = "center">
-  MyMovies <img src = ".icon.ico" width=100% height=100%>
-</p>
-
 ![](https://img.shields.io/badge/Language-%F0%9F%87%AE%F0%9F%87%B9-yellow)
 
 <p align = "center">
